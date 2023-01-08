@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, GatewayIntentBits, PermissionsBitField } = require('discord.js');
-const fetch = require('node-fetch');
+const fetch = import('node-fetch');
 const http = require('http');
 const proc = require('child_process');
 
