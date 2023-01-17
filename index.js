@@ -155,6 +155,13 @@ client.on('interactionCreate', async interaction => {
     }catch{
       await interaction.reply("Analysis failed. Ping camel or something idfk");
     }
+  } else if(commandName === 'paraspam') {
+    let n = interaction.options.getInteger('paras');
+    if(n>0){
+      if(n<11){
+	 interaction.reply("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
+	 for(i=1;i<n;i++)interaction.channel.send("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
+    }
   }
 });
 
