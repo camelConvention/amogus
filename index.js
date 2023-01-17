@@ -161,6 +161,7 @@ client.on('interactionCreate', async interaction => {
       if(n<11){
 	 interaction.reply("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
 	 for(i=1;i<n;i++)interaction.channel.send("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
+      }else interaction.reply("bro you tryna ratelimit me or something??");
     }
   }
 });
