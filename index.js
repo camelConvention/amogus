@@ -49,7 +49,8 @@ client.on('interactionCreate', async interaction => {
     try{
       var endpoints = {
         '346276641602928641':['https://docs.google.com/forms/d/e/1FAIpQLSegS9sxDDg3VitVRCSweeIq5LfYtKkqmCP9sX0e5qnxPpIUqw/formResponse?usp=pp_url&entry.725761049=',true],
-        '798332652326223872':['https://docs.google.com/forms/d/e/1FAIpQLSeZRYZQcpwNRuCMi8poA0SxCKFhsyKelthvWR8QUxTEmc3mlg/formResponse?usp=pp_url&entry.725761049=',false]
+        '798332652326223872':['https://docs.google.com/forms/d/e/1FAIpQLSeZRYZQcpwNRuCMi8poA0SxCKFhsyKelthvWR8QUxTEmc3mlg/formResponse?usp=pp_url&entry.725761049=',false],
+      	'849659639972626432':['https://docs.google.com/forms/d/e/1FAIpQLSdG5WjlQwBFKQf0zAYEHtIZ2SuOeISVwiZdq0RpzoKvEfiJsw/formResponse?usp=pp_url&entry.725761049=',false]
       };
       var mon = interaction.options.getString('mon');
       var r,s = '';
@@ -61,7 +62,7 @@ client.on('interactionCreate', async interaction => {
       s = s.split("$");
       r = s.pop().replace("℻","");
       console.log(r);
-      if(interaction.member.roles.cache.some(e=>e.name===r||e.name==='Coder'||e.name==='Mods')){
+      if(interaction.member.roles.cache.some(e=>e.name===r||e.name==='Coder'||e.name==='Mods')||interaction.member.user.id=='575472694678781981'){
         mL = s.map((e,i)=>endpoints[interaction.guildId][1]?e.split("&").map(l=>l+"("+(e.includes('-Mega')?"MT":"T")+(i%5+1)):e).flat();
         if(mon == 'Skip')q = mon;
         else q = mL.find(e=>e.replace(/\(.*/,"")==mon);
