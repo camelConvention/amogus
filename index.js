@@ -62,7 +62,7 @@ client.on('interactionCreate', async interaction => {
       s = s.split("$");
       r = s.pop().replace("℻","");
       console.log(r);
-      if(interaction.member.roles.cache.some(e=>e.name===r||e.name==='Coder'||e.name==='Mods')||interaction.member.user.id=='575472694678781981'){
+      if(interaction.member.roles.cache.some(e=>e.name.includes(r)||e.name==='Coder'||e.name==='Mods')||interaction.member.user.id=='575472694678781981'){
         mL = s.map((e,i)=>endpoints[interaction.guildId][1]?e.split("&").map(l=>l+"("+(e.includes('-Mega')?"MT":"T")+(i%5+1)):e).flat();
         if(mon == 'Skip')q = mon;
         else q = mL.find(e=>e.replace(/\(.*/,"")==mon);
@@ -161,7 +161,7 @@ client.on('interactionCreate', async interaction => {
     if(n>0){
       if(n<11){
 	 interaction.reply("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
-	 for(i=1;i<n;i++)interaction.channel.send("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
+	 setTimeout(()=>{for(i=1;i<n;i++)interaction.channel.send("https://play.pokemonshowdown.com/sprites/ani/paras.gif"},300);
       }else interaction.reply("Bro you tryna ratelimit me or something??");
     }else if(n==0)interaction.reply("​");
     else interaction.reply('Wow, I bet you think you\'re real funny saying "oh haha you should run this command a negative number of times, that\'ll show them." Have you considered that you\'re making a fool out of yourself? That you\'re a clown? A bit of a joker? Somewhat of a jester, perhaps? A harlequin through and through, I presume? Maybe even a buffoon? No, I guess you didn\'t, since you were too busy trying to trick a Discord bot with a negative number. Absolute moron.');
