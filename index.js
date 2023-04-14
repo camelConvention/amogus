@@ -160,9 +160,8 @@ client.on('interactionCreate', async interaction => {
     let n = interaction.options.getInteger('paras');
     if(n>0){
       if(n<11){
-	 await interaction.deferReply();
-	 for(i=1;i<n;i++)await interaction.channel.send("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
-	 await interaction.editReply("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
+	 interaction.reply("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
+	 for(i=1;i<n;i++)interaction.channel.send("https://play.pokemonshowdown.com/sprites/ani/paras.gif");
       }else await interaction.reply("Bro you tryna ratelimit me or something??");
     }else if(n==0)await interaction.reply("​");
     else await interaction.reply('Wow, I bet you think you\'re real funny saying "oh haha you should run this command a negative number of times, that\'ll show them." Have you considered that you\'re making a fool out of yourself? That you\'re a clown? A bit of a joker? Somewhat of a jester, perhaps? A harlequin through and through, I presume? Maybe even a buffoon? No, I guess you didn\'t, since you were too busy trying to trick a Discord bot with a negative number. Absolute moron.');
