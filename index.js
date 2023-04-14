@@ -170,7 +170,7 @@ client.on('interactionCreate', async interaction => {
 
 client.on('messageCreate', async message => {
   try{
-    if(message.webhookId && message.content.includes("℻"))message.guild.channels.cache.find(e=>e.name.includes("draft")).send('<@&'+(message.guild.roles.cache.find(e=>e.name===message.content.split("℻")[1])??"testing")+'> are now up to draft!');
+    if(message.webhookId && message.content.includes("℻"))message.guild.channels.cache.find(e=>e.name.includes("draft")).send('<@&'+(message.guild.roles.cache.find(e=>e.name.includes(message.content.split("℻")[1]))??"testing")+'> are now up to draft!');
   }catch{
     console.log("a little bit of trolling, perhaps?");
   }
